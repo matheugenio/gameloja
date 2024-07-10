@@ -1,4 +1,4 @@
-package model;
+package com.generation.gameloja.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -15,13 +15,13 @@ public class Categoria {
     private Long id;
 
     @NotBlank(message = "O atributo nome é obrigatório!")
-    @Size(min = 5, max = 100, message = "O atributo nome deve ter no mínimo 05 e no máximo 100 caracteres")
+    @Size(min = 2, max = 100, message = "O atributo nome deve ter no mínimo 05 e no máximo 100 caracteres")
     private String nome;
 
     @Size(min = 10, max = 500, message = "O atributo descrição deve ter no mínimo 10 e no máximo 100 caracteres")
     private String descricao;
 
-    @OneToMany(fetch =  FetchType.LAZY, mappedBy = "tema",cascade = CascadeType.REMOVE)
+    @OneToMany(fetch =  FetchType.LAZY, mappedBy = "categoria",cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("produto")
     private List<Produto> produto;
 

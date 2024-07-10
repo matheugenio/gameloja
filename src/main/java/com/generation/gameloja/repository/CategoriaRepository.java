@@ -1,6 +1,6 @@
-package repository;
+package com.generation.gameloja.repository;
 
-import model.Categoria;
+import com.generation.gameloja.model.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

@@ -1,8 +1,9 @@
-package model;
+package com.generation.gameloja.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -21,7 +22,7 @@ public class Produto {
     @Size(min = 10, max = 500, message = "O atributo descrição deve ter no mínimo 10 e no máximo 100 caracteres")
     private String descricao;
 
-    @NotBlank(message = "O atributo preço é obrigatório!")
+    @NotNull
     private float preco;
 
     private String plataforma;
