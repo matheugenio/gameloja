@@ -24,7 +24,7 @@ public class Produto {
     @NotBlank(message = "O atributo preço é obrigatório!")
     private float preco;
 
-    private String  plataforma;
+    private String plataforma;
 
     @ManyToOne
     @JsonIgnoreProperties("produto")
